@@ -50,6 +50,14 @@ class TezineClanovaEkipe {
 		return min;
 	}
 	
+	boolean pronadjiTezinu(double trazenaTezina) {
+		for(int i=0; i<brojac; i++)
+			if (nizTezina[i] == trazenaTezina)
+				return true;
+		
+		return false;
+	}
+	
 	void ispisiKategorije() {
 		int brojLakih = 0;
 		int brojSrednjih = 0;

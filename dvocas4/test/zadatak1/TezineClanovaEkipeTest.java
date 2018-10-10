@@ -96,7 +96,27 @@ public class TezineClanovaEkipeTest {
 		instance.unesi(50.0);
 		instance.unesi(182.3);
 		
-		assertEquals("Za uneti niz tezina {110.5, 82.3, 50.0, 182.3}, meotda kao minimum ne vraca 50.0",50.0, instance.pronadjiNajlakseg(), 0.001);
+		assertEquals("Za uneti niz tezina {110.5, 82.3, 50.0, 182.3}, metoda kao minimum ne vraca 50.0",50.0, instance.pronadjiNajlakseg(), 0.001);
+	}
+	
+	@Test(timeout = 2000)
+	public void metoda_pronadjiTezinuTrue() {
+		instance.unesi(110.5);
+		instance.unesi(82.3);
+		instance.unesi(50.0);
+		instance.unesi(182.3);
+		
+		assertEquals("Za uneti niz tezina {110.5, 82.3, 50.0, 182.3}, metoda ne pronalazi 50.0 u nizu",true, instance.pronadjiTezinu(50.0));
+	}
+	
+	@Test(timeout = 2000)
+	public void metoda_pronadjiTezinuFalse() {
+		instance.unesi(110.5);
+		instance.unesi(82.3);
+		instance.unesi(50.0);
+		instance.unesi(182.3);
+		
+		assertEquals("Za uneti niz tezina {110.5, 82.3, 50.0, 182.3}, metoda pronalazi 112.3 u nizu a ne bi trebalo",false, instance.pronadjiTezinu(112.3));
 	}
 
 	@Test(timeout = 2000)
