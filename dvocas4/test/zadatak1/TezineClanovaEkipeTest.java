@@ -58,6 +58,69 @@ public class TezineClanovaEkipeTest {
 	}
 	
 	@Test(timeout = 2000)
+	public void metoda_unesiKilazaPremala() {
+		PrintStream pom = System.out;
+		try {
+			// Otvoren outputstream za redirekciju System.out
+			ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+			System.out.flush();
+			// Redirekcija
+			System.setOut(new PrintStream(buffer));
+
+			instance.unesi(40.0);
+
+			System.out.flush();
+
+			// Preuzimanje ispisa metode na ekranu
+			String ispis = buffer.toString();
+
+			// Vracanje System.out na staro
+			System.setOut(pom);
+
+			assertTrue("Za unetu tezinu 40.0 koja je premala NE ispisuje se rec GRESKA na ekranu", ispis.trim().equalsIgnoreCase("GRESKA"));
+			assertEquals("Ipak je povecan brojac iako nije trebalo jer je tezina premala", 0, instance.brojac);
+		} catch (Exception e) {
+			System.setOut(pom);
+			e.printStackTrace();
+		}
+	}
+
+	@Test(timeout = 2000)
+	public void metoda_unesiNizPun() {
+		instance.unesi(110.5);
+		instance.unesi(82.3);
+		instance.unesi(110.5);
+		instance.unesi(82.3);
+		instance.unesi(110.5);
+
+		PrintStream pom = System.out;
+		try {
+			// Otvoren outputstream za redirekciju System.out
+			ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+			System.out.flush();
+			// Redirekcija
+			System.setOut(new PrintStream(buffer));
+
+			instance.unesi(99.9);
+
+			System.out.flush();
+
+			// Preuzimanje ispisa metode na ekranu
+			String ispis = buffer.toString();
+
+			// Vracanje System.out na staro
+			System.setOut(pom);
+
+			assertTrue("Za pokusaj unosa kad je niz vec pun NE ispisuje se rec GRESKA na ekranu", ispis.trim().equalsIgnoreCase("GRESKA"));
+			assertEquals("Ipak je povecan brojac iako nije trebalo jer je niz pun", 5, instance.brojac);
+			assertNotEquals("Ipak je uneta tezina iako je niz pun", 99.9, instance.nizTezina[4], 0.001);
+		} catch (Exception e) {
+			System.setOut(pom);
+			e.printStackTrace();
+		}
+	}
+
+	@Test(timeout = 2000)
 	public void metoda_ispisi() {
 		instance.unesi(110.5);
 		instance.unesi(82.3);

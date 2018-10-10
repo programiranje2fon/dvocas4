@@ -2,6 +2,9 @@ package zadatak2;
 
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -50,6 +53,97 @@ public class VisineClanovaEkipeTest {
 		assertEquals("Unet je i treci element, a trebalo je da ostane 0", 0, instance.nizVisina[2]);
 		assertEquals("Unet je i cetvrti element, a trebalo je da ostane 0", 0, instance.nizVisina[3]);
 		assertEquals("Unet je i peti element, a trebalo je da ostane 0", 0, instance.nizVisina[4]);
+	}
+	
+	@Test(timeout = 2000)
+	public void metoda_unesiVisinaPremala() {
+		PrintStream pom = System.out;
+		try {
+			// Otvoren outputstream za redirekciju System.out
+			ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+			System.out.flush();
+			// Redirekcija
+			System.setOut(new PrintStream(buffer));
+
+			instance.unesi(159);
+
+			System.out.flush();
+
+			// Preuzimanje ispisa metode na ekranu
+			String ispis = buffer.toString();
+
+			// Vracanje System.out na staro
+			System.setOut(pom);
+
+			assertTrue("Za unetu visinu 159 koja je premala NE ispisuje se rec GRESKA na ekranu", ispis.trim().equalsIgnoreCase("GRESKA"));
+			assertEquals("Ipak je povecan brojac iako nije trebalo jer je visina premala", 0, instance.brojac);
+		} catch (Exception e) {
+			System.setOut(pom);
+			e.printStackTrace();
+		}
+	}
+
+	@Test(timeout = 2000)
+	public void metoda_unesiVisinaPrevelika() {
+		PrintStream pom = System.out;
+		try {
+			// Otvoren outputstream za redirekciju System.out
+			ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+			System.out.flush();
+			// Redirekcija
+			System.setOut(new PrintStream(buffer));
+
+			instance.unesi(251);
+
+			System.out.flush();
+
+			// Preuzimanje ispisa metode na ekranu
+			String ispis = buffer.toString();
+
+			// Vracanje System.out na staro
+			System.setOut(pom);
+
+			assertTrue("Za unetu visinu 251 koja je prevelika NE ispisuje se rec GRESKA na ekranu", ispis.trim().equalsIgnoreCase("GRESKA"));
+			assertEquals("Ipak je povecan brojac iako nije trebalo jer je visina prevelika", 0, instance.brojac);
+		} catch (Exception e) {
+			System.setOut(pom);
+			e.printStackTrace();
+		}
+	}
+
+	@Test(timeout = 2000)
+	public void metoda_unesiNizPun() {
+		instance.unesi(180);
+		instance.unesi(190);
+		instance.unesi(210);
+		instance.unesi(182);
+		instance.unesi(195);
+
+		PrintStream pom = System.out;
+		try {
+			// Otvoren outputstream za redirekciju System.out
+			ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+			System.out.flush();
+			// Redirekcija
+			System.setOut(new PrintStream(buffer));
+
+			instance.unesi(199);
+
+			System.out.flush();
+
+			// Preuzimanje ispisa metode na ekranu
+			String ispis = buffer.toString();
+
+			// Vracanje System.out na staro
+			System.setOut(pom);
+
+			assertTrue("Za pokusaj unosa kad je niz vec pun NE ispisuje se rec GRESKA na ekranu", ispis.trim().equalsIgnoreCase("GRESKA"));
+			assertEquals("Ipak je povecan brojac iako nije trebalo jer je niz pun", 5, instance.brojac);
+			assertNotEquals("Ipak je uneta tezina iako je niz pun", 199, instance.nizVisina[4]);
+		} catch (Exception e) {
+			System.setOut(pom);
+			e.printStackTrace();
+		}
 	}
 
 	@Test (timeout = 2000)
