@@ -55,8 +55,8 @@ public class TezineClanovaEkipeTest {
 		assertEquals("Unet je i cetvrti element, a trebalo je da ostane -1", -1, instance.nizTezina[3], 0.001);
 		assertEquals("Unet je i peti element, a trebalo je da ostane -1", -1, instance.nizTezina[4], 0.001);
 
-	}	
-
+	}
+	
 	@Test(timeout = 2000)
 	public void metoda_ispisi() {
 		instance.unesi(110.5);
