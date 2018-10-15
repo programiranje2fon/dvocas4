@@ -43,7 +43,7 @@ public class VisineClanovaEkipeTest {
 	}
 	
 	@Test (timeout = 2000)
-	public void testUnesi() {
+	public void metoda_unesi() {
 		instance.unesi(180);
 		instance.unesi(169);
 		
@@ -147,7 +147,7 @@ public class VisineClanovaEkipeTest {
 	}
 
 	@Test (timeout = 2000)
-	public void testVratiProsek() {
+	public void metoda_vratiProsek() {
 		instance.unesi(180);
 		instance.unesi(169);
 		instance.unesi(190);
@@ -156,7 +156,7 @@ public class VisineClanovaEkipeTest {
 	}
 
 	@Test (timeout = 2000)
-	public void testVratiNajvecuRazliku() {
+	public void metoda_vratiNajvecuRazliku() {
 		instance.unesi(180);
 		instance.unesi(169);
 		instance.unesi(190);
