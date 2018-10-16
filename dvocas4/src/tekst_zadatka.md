@@ -10,7 +10,7 @@ Napraviti klasu **TezineClanovaEkipe** u paketu **zadatak1** koja ima:
 
 2. Atribut **brojac** koji predstavlja stvarni, trenutni broj članova ekipe. Postaviti da početna vrednost bude nula.
 
-3. Konstruktor koji inicijalizuje niz težina na kapacitet 20 i postavlja vrednosti svih 20 elemenata niza na -1.**(besparametarski konstruktor, inicijalizacija niza, kapacitet niza, pristup elementima niza preko indeksa, indeksi kreću od nule)**
+3. Konstruktor koji inicijalizuje niz težina na kapacitet 20 i postavlja vrednosti svih 20 elemenata niza na -1.**(default konstruktor, besparametarski konstruktor, inicijalizacija niza, kapacitet niza, pristup elementima niza preko indeksa, indeksi kreću od nule)**
 
 3. Konstruktor koji kao parametar prima maksimalan broj članova ekipe (kapacitet niza), inicijalizuje niz na taj kapacitet i postavlja vrednosti svih elemenata niza na -1.**(parametrizovani konstruktor, length - kapacitet niza, forEach petlja)**
 
