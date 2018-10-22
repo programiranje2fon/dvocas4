@@ -29,10 +29,6 @@ class TezineClanovaEkipe {
 	}
 	
 	void ispisi() {
-		// objasniti forEach petlju ali i da ovde nije skroz ok
-		// jer se ide do brojaca sa ispisom, ostalo su prazni elementi
-		//for(double tezina: nizTezina)
-		//	System.out.println(tezina);
 		for(int i=0; i<brojac; i++)
 			System.out.println(nizTezina[i]);
 	}

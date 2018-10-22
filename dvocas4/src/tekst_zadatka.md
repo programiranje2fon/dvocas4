@@ -6,25 +6,25 @@
 
 Napraviti klasu **TezineClanovaEkipe** u paketu **zadatak1** koja ima:
 
-1. Atribut **nizTezina** koji predstavlja niz težina članova bokserske ekipe u kilogramima (npr. 89,5 kg) **(deklarisanje niza)**
+1. Atribut **nizTezina** koji predstavlja niz težina članova bokserske ekipe u kilogramima (npr. 89,5 kg)
 
 2. Atribut **brojac** koji predstavlja stvarni, trenutni broj članova ekipe. Postaviti da početna vrednost bude nula.
 
-3. Konstruktor koji inicijalizuje niz težina na kapacitet 20 i postavlja vrednosti svih 20 elemenata niza na -1.**(default konstruktor, besparametarski konstruktor, inicijalizacija niza, kapacitet niza, pristup elementima niza preko indeksa, indeksi kreću od nule)**
+3. Konstruktor koji inicijalizuje niz težina na kapacitet 20 i postavlja vrednosti svih 20 elemenata niza na -1.
 
-3. Konstruktor koji kao parametar prima maksimalan broj članova ekipe (kapacitet niza), inicijalizuje niz na taj kapacitet i postavlja vrednosti svih elemenata niza na -1.**(parametrizovani konstruktor, length - kapacitet niza, forEach petlja)**
+3. Konstruktor koji kao parametar prima maksimalan broj članova ekipe (kapacitet niza), inicijalizuje niz na taj kapacitet i postavlja vrednosti svih elemenata niza na -1.
 
 4. Metodu **unesi** koja prima kao parametar težinu novog člana ekipe i dodaje je u niz težina na prvo slobodno mesto. Dodavanje se radi samo ako niz nije popunjen do maksimuma i ako je uneta težina veća od 40.5 kg. Ako je niz popunjen ili ako težina nije u dozvoljenim granicama, potrebno je ispisati poruku "GRESKA" na ekranu.
 
-5. Metodu **ispisi** za prikaz sadržaja niza na ekranu.**(pokazati forEach petlju ali da ovde nije skroz ok jer se ispisuje sve a ne samo do brojaca)**
+5. Metodu **ispisi** za prikaz sadržaja niza na ekranu.
 
-6. Metodu **pronadjiTezinu** koja kao parametar prima težinu nekog boksera i proverava da li se u nizu težina može naći bokser iste te težine. Ako može, metoda vraća true, a inače vraća false.**(return naredba i prekidanje metode)**
+6. Metodu **pronadjiTezinu** koja kao parametar prima težinu nekog boksera i proverava da li se u nizu težina može naći bokser iste te težine. Ako može, metoda vraća true, a inače vraća false.
 
 7. Metodu **pronadjiNajlakseg** koja pronalazi težinu najlakšeg boksera u nizu. Pronađeni broj se vraća kao povratna vrednost metode. Ako je niz prazan, metoda vraća -1.
 
 8. Metodu **ispisiKategorije** koja ispisuje na ekranu koliko boksera iz ekipe pripada lakoj, koliko srednjoj i koliko teškoj kategoriji. Ako je težina boksera manja od 65kg on pripada lakoj kategoriji. Ako je težina 65kg ili više, ali manja od 85kg on pripada srednjoj kategoriji. Ako je težina 85kg ili više, on pripada teškoj kategoriji. Ispis bi trebalo da bude u tri reda u formatu: "Laka:4", "Srednja:1", "Teska:9"
 
-Napraviti klasu **TestTezineClanovaEkipe** u paketu **zadatak1** koja u main metodi kreira dva objekta klase TezineClanovaEkipe. Inicijalizovati prvu ekipu tako da ima maksimalno 3 boksera i uneti težine 100.0, 55.5 i 44.5kg. Inicijalizovati drugu ekipu tako da se ne zna koliko maksimalno ima boksera (a nije više od 20) i uneti težine 66.6, 44.3 i 150.0 kg. Ispisati na ekranu težinu najlakšeg boksera druge ekipe.**(pozivanje konstruktora)**
+Napraviti klasu **TestTezineClanovaEkipe** u paketu **zadatak1** koja u main metodi kreira dva objekta klase TezineClanovaEkipe. Inicijalizovati prvu ekipu tako da ima maksimalno 3 boksera i uneti težine 100.0, 55.5 i 44.5kg. Inicijalizovati drugu ekipu tako da se ne zna koliko maksimalno ima boksera (a nije više od 20) i uneti težine 66.6, 44.3 i 150.0 kg. Ispisati na ekranu težinu najlakšeg boksera druge ekipe.
 
 
 ## Zadatak 2
