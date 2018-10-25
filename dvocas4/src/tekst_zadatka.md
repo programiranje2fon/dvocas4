@@ -38,7 +38,7 @@ Napraviti klasu **VisineClanovaEkipe** u paketu **zadatak2** koja ima:
 
 3. Konstruktor koji parametar prima maksimalni broj članova ekipe (kapacitet niza) i inicijalizuje niz visina na uneti kapacitet samo ako je uneti broj članova ekipe veći od nule. Ako to nije slučaj, niz se inicijalizuje na kapacitet 20. U  svakom slučaju, postaviti da svi elementi niza imaju vrednost 0.
 
-4. Metodu **unesi** koja prima kao parametar visinu novog člana ekipe i dodaje je u niz visina na prvo slobodno mesto. Dodavanje se radi samo ako niz nije popunjen do maksimuma i ako je uneta visina u rasponu od 160 do 250 cm uključujući i te vrednosti. Ako je niz popunjen ili ako težina nije u dozvoljenim granicama, potrebno je ispisati poruku "GRESKA" na ekranu.
+4. Metodu **unesi** koja prima kao parametar visinu novog člana ekipe i dodaje je u niz visina na prvo slobodno mesto. Dodavanje se radi samo ako niz nije popunjen do maksimuma i ako je uneta visina u rasponu od 160 do 250 cm uključujući i te vrednosti. Ako je niz popunjen ili ako visina nije u dozvoljenim granicama, potrebno je ispisati poruku "GRESKA" na ekranu.
 
 5. Metodu **vratiProsek** koja kao povratnu vrednost vraća prosečnu visinu košarkaša u ekipi i to kao ceo broj.
 

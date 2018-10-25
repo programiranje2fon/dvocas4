@@ -56,7 +56,7 @@ public class VisineClanovaEkipeTest {
 	}
 	
 	@Test(timeout = 2000)
-	public void metoda_unesiVisinaPremala() {
+	public void metoda_unesi_visinaPremala() {
 		PrintStream pom = System.out;
 		try {
 			// Otvoren outputstream za redirekciju System.out
@@ -84,7 +84,7 @@ public class VisineClanovaEkipeTest {
 	}
 
 	@Test(timeout = 2000)
-	public void metoda_unesiVisinaPrevelika() {
+	public void metoda_unesi_visinaPrevelika() {
 		PrintStream pom = System.out;
 		try {
 			// Otvoren outputstream za redirekciju System.out
@@ -112,7 +112,7 @@ public class VisineClanovaEkipeTest {
 	}
 
 	@Test(timeout = 2000)
-	public void metoda_unesiNizPun() {
+	public void metoda_unesi_nizPun() {
 		instance.unesi(180);
 		instance.unesi(190);
 		instance.unesi(210);

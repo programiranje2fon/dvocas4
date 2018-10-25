@@ -58,7 +58,7 @@ public class TezineClanovaEkipeTest {
 	}
 	
 	@Test(timeout = 2000)
-	public void metoda_unesiKilazaPremala() {
+	public void metoda_unesi_kilazaPremala() {
 		PrintStream pom = System.out;
 		try {
 			// Otvoren outputstream za redirekciju System.out
@@ -86,7 +86,7 @@ public class TezineClanovaEkipeTest {
 	}
 
 	@Test(timeout = 2000)
-	public void metoda_unesiNizPun() {
+	public void metoda_unesi_nizPun() {
 		instance.unesi(110.5);
 		instance.unesi(82.3);
 		instance.unesi(110.5);
@@ -163,7 +163,7 @@ public class TezineClanovaEkipeTest {
 	}
 	
 	@Test(timeout = 2000)
-	public void metoda_pronadjiTezinuTrue() {
+	public void metoda_pronadjiTezinu_true() {
 		instance.unesi(110.5);
 		instance.unesi(82.3);
 		instance.unesi(50.0);
@@ -173,7 +173,7 @@ public class TezineClanovaEkipeTest {
 	}
 	
 	@Test(timeout = 2000)
-	public void metoda_pronadjiTezinuFalse() {
+	public void metoda_pronadjiTezinu_false() {
 		instance.unesi(110.5);
 		instance.unesi(82.3);
 		instance.unesi(50.0);
@@ -183,7 +183,7 @@ public class TezineClanovaEkipeTest {
 	}
 
 	@Test(timeout = 2000)
-	public void metoda_ispisiProcente() {
+	public void metoda_ispisiKategorije() {
 		instance.unesi(110.5);
 		instance.unesi(82.3);
 		instance.unesi(50.0);
