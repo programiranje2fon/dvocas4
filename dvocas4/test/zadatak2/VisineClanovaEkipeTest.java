@@ -46,12 +46,14 @@ public class VisineClanovaEkipeTest {
 	public void metoda_unesi() {
 		instance.unesi(180);
 		instance.unesi(169);
+		instance.unesi(160);
+		instance.unesi(250);
 		
-		assertEquals("Ako se unesu dva elementa, metoda u niz ne ubaci oba kako treba, brojac nije 2", 2, instance.brojac);
+		assertEquals("Ako se unesu cetiri elementa, metoda u niz ne ubaci sva cetiri elementa kako treba, brojac nije 4", 4, instance.brojac);
 		assertEquals("Unet je prvi element 180, ali nije postavljen na prvo mesto u nizu", 180, instance.nizVisina[0]);
 		assertEquals("Unet je drugi element 169, ali nije postavljen na drugo mesto u nizu", 169, instance.nizVisina[1]);
-		assertEquals("Unet je i treci element, a trebalo je da ostane 0", 0, instance.nizVisina[2]);
-		assertEquals("Unet je i cetvrti element, a trebalo je da ostane 0", 0, instance.nizVisina[3]);
+		assertEquals("Unet je drugi element 160, ali nije postavljen na trece mesto u nizu", 160, instance.nizVisina[2]);
+		assertEquals("Unet je drugi element 250, ali nije postavljen na cetvrto mesto u nizu", 250, instance.nizVisina[3]);
 		assertEquals("Unet je i peti element, a trebalo je da ostane 0", 0, instance.nizVisina[4]);
 	}
 	
