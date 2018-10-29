@@ -1,6 +1,8 @@
 package zadatak2;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -11,25 +13,33 @@ import org.junit.Test;
 
 public class VisineClanovaEkipeTest {
 	
+	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
+	private final PrintStream originalOut = System.out;
+	private final PrintStream originalErr = System.err;
+	
 	VisineClanovaEkipe instance;
 
 	@Before
 	public void setUp() throws Exception {
 		instance = new VisineClanovaEkipe(5);
+		System.setOut(new PrintStream(outContent));
+	    System.setErr(new PrintStream(errContent));
 	}
 
 	@After
 	public void tearDown() throws Exception {
 		instance = null;
+		System.setOut(originalOut);
+	    System.setErr(originalErr);
 	}
-
+	
 	@Test (timeout = 2000)
 	public void konstruktor_VisineClanovaEkipe() {
 		assertEquals("Kad se pozove sa brojem 5, ne inicijalizuje niz na 5 elemenata", 5, instance.nizVisina.length);
 		
-		for(int visina: instance.nizVisina)
+		for (int visina : instance.nizVisina)
 			assertEquals("Element niza nije inicijalizovan na 0", 0, visina);
-
 	}
 
 	@Test (timeout = 2000)
@@ -38,7 +48,7 @@ public class VisineClanovaEkipeTest {
 		
 		assertEquals("Kad se pozove sa brojem -10, ne inicijalizuje niz na 20 elemenata", 20, instance.nizVisina.length);
 		
-		for(int visina: instance.nizVisina)
+		for (int visina : instance.nizVisina)
 			assertEquals("Element niza nije inicijalizovan na 0", 0, visina);
 	}
 	
@@ -59,58 +69,18 @@ public class VisineClanovaEkipeTest {
 	
 	@Test(timeout = 2000)
 	public void metoda_unesi_visinaPremala() {
-		PrintStream pom = System.out;
-		try {
-			// Otvoren outputstream za redirekciju System.out
-			ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-			System.out.flush();
-			// Redirekcija
-			System.setOut(new PrintStream(buffer));
+		instance.unesi(159);
 
-			instance.unesi(159);
-
-			System.out.flush();
-
-			// Preuzimanje ispisa metode na ekranu
-			String ispis = buffer.toString();
-
-			// Vracanje System.out na staro
-			System.setOut(pom);
-
-			assertTrue("Za unetu visinu 159 koja je premala NE ispisuje se rec GRESKA na ekranu", ispis.trim().equalsIgnoreCase("GRESKA"));
-			assertEquals("Ipak je povecan brojac iako nije trebalo jer je visina premala", 0, instance.brojac);
-		} catch (Exception e) {
-			System.setOut(pom);
-			e.printStackTrace();
-		}
+		assertTrue("Za unetu visinu 159 koja je premala NE ispisuje se rec GRESKA na ekranu", outContent.toString().trim().equalsIgnoreCase("GRESKA"));
+		assertEquals("Ipak je povecan brojac iako nije trebalo jer je visina premala", 0, instance.brojac);
 	}
 
 	@Test(timeout = 2000)
 	public void metoda_unesi_visinaPrevelika() {
-		PrintStream pom = System.out;
-		try {
-			// Otvoren outputstream za redirekciju System.out
-			ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-			System.out.flush();
-			// Redirekcija
-			System.setOut(new PrintStream(buffer));
+		instance.unesi(251);
 
-			instance.unesi(251);
-
-			System.out.flush();
-
-			// Preuzimanje ispisa metode na ekranu
-			String ispis = buffer.toString();
-
-			// Vracanje System.out na staro
-			System.setOut(pom);
-
-			assertTrue("Za unetu visinu 251 koja je prevelika NE ispisuje se rec GRESKA na ekranu", ispis.trim().equalsIgnoreCase("GRESKA"));
-			assertEquals("Ipak je povecan brojac iako nije trebalo jer je visina prevelika", 0, instance.brojac);
-		} catch (Exception e) {
-			System.setOut(pom);
-			e.printStackTrace();
-		}
+		assertTrue("Za unetu visinu 251 koja je prevelika NE ispisuje se rec GRESKA na ekranu", outContent.toString().trim().equalsIgnoreCase("GRESKA"));
+		assertEquals("Ipak je povecan brojac iako nije trebalo jer je visina prevelika", 0, instance.brojac);
 	}
 
 	@Test(timeout = 2000)
@@ -121,31 +91,11 @@ public class VisineClanovaEkipeTest {
 		instance.unesi(182);
 		instance.unesi(195);
 
-		PrintStream pom = System.out;
-		try {
-			// Otvoren outputstream za redirekciju System.out
-			ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-			System.out.flush();
-			// Redirekcija
-			System.setOut(new PrintStream(buffer));
+		instance.unesi(199);
 
-			instance.unesi(199);
-
-			System.out.flush();
-
-			// Preuzimanje ispisa metode na ekranu
-			String ispis = buffer.toString();
-
-			// Vracanje System.out na staro
-			System.setOut(pom);
-
-			assertTrue("Za pokusaj unosa kad je niz vec pun NE ispisuje se rec GRESKA na ekranu", ispis.trim().equalsIgnoreCase("GRESKA"));
-			assertEquals("Ipak je povecan brojac iako nije trebalo jer je niz pun", 5, instance.brojac);
-			assertNotEquals("Ipak je uneta tezina iako je niz pun", 199, instance.nizVisina[4]);
-		} catch (Exception e) {
-			System.setOut(pom);
-			e.printStackTrace();
-		}
+		assertTrue("Za pokusaj unosa kad je niz vec pun NE ispisuje se rec GRESKA na ekranu", outContent.toString().trim().equalsIgnoreCase("GRESKA"));
+		assertEquals("Ipak je povecan brojac iako nije trebalo jer je niz pun", 5, instance.brojac);
+		assertNotEquals("Ipak je uneta tezina iako je niz pun", 199, instance.nizVisina[4]);
 	}
 
 	@Test (timeout = 2000)

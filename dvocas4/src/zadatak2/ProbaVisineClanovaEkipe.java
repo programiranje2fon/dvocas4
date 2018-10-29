@@ -1,6 +1,6 @@
 package zadatak2;
 
-public class TestVisineClanovaEkipe {
+public class ProbaVisineClanovaEkipe {
 
 	public static void main(String[] args) {
 		VisineClanovaEkipe vek1 = new VisineClanovaEkipe(20);

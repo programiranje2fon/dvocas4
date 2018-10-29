@@ -1,6 +1,6 @@
 package zadatak1;
 
-class TestTezineClanovaEkipe {
+class ProbaTezineClanovaEkipe {
 
 	public static void main(String[] args) {
 		TezineClanovaEkipe ekipa1 = new TezineClanovaEkipe(3);
@@ -16,7 +16,6 @@ class TestTezineClanovaEkipe {
 		ekipa2.unesi(150.0);
 		
 		System.out.println( ekipa2.pronadjiNajlakseg());
-		
 	}
 
 }
