@@ -69,7 +69,7 @@ public class TezineClanovaEkipeTest {
 	public void metoda_unesi_kilazaPremala() {
 		instance.unesi(40.0);
 
-		assertTrue("Za unetu tezinu 40.0 koja je premala NE ispisuje se rec GRESKA na ekranu", outContent.toString().trim().equalsIgnoreCase("GRESKA"));
+		assertTrue("Za unetu tezinu 40.0 koja je premala NE ispisuje se rec GRESKA na ekranu", outContent.toString().toLowerCase().contains("GRESKA".toLowerCase()));
 		assertEquals("Ipak je povecan brojac iako nije trebalo jer je tezina premala", 0, instance.brojac);
 	}
 
@@ -83,7 +83,7 @@ public class TezineClanovaEkipeTest {
 
 		instance.unesi(99.9);
 
-		assertTrue("Za pokusaj unosa kad je niz vec pun NE ispisuje se rec GRESKA na ekranu", outContent.toString().trim().equalsIgnoreCase("GRESKA"));
+		assertTrue("Za pokusaj unosa kad je niz vec pun NE ispisuje se rec GRESKA na ekranu", outContent.toString().toLowerCase().contains("GRESKA".toLowerCase()));
 		assertEquals("Ipak je povecan brojac iako nije trebalo jer je niz pun", 5, instance.brojac);
 		assertNotEquals("Ipak je uneta tezina iako je niz pun", 99.9, instance.nizTezina[4], 0.001);
 	}

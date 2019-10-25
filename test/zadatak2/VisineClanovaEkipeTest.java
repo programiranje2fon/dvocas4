@@ -71,7 +71,7 @@ public class VisineClanovaEkipeTest {
 	public void metoda_unesi_visinaPremala() {
 		instance.unesi(159);
 
-		assertTrue("Za unetu visinu 159 koja je premala NE ispisuje se rec GRESKA na ekranu", outContent.toString().trim().equalsIgnoreCase("GRESKA"));
+		assertTrue("Za unetu visinu 159 koja je premala NE ispisuje se rec GRESKA na ekranu", outContent.toString().toLowerCase().contains("GRESKA".toLowerCase()));
 		assertEquals("Ipak je povecan brojac iako nije trebalo jer je visina premala", 0, instance.brojac);
 	}
 
@@ -79,7 +79,7 @@ public class VisineClanovaEkipeTest {
 	public void metoda_unesi_visinaPrevelika() {
 		instance.unesi(251);
 
-		assertTrue("Za unetu visinu 251 koja je prevelika NE ispisuje se rec GRESKA na ekranu", outContent.toString().trim().equalsIgnoreCase("GRESKA"));
+		assertTrue("Za unetu visinu 251 koja je prevelika NE ispisuje se rec GRESKA na ekranu", outContent.toString().toLowerCase().contains("GRESKA".toLowerCase()));
 		assertEquals("Ipak je povecan brojac iako nije trebalo jer je visina prevelika", 0, instance.brojac);
 	}
 
@@ -93,7 +93,7 @@ public class VisineClanovaEkipeTest {
 
 		instance.unesi(199);
 
-		assertTrue("Za pokusaj unosa kad je niz vec pun NE ispisuje se rec GRESKA na ekranu", outContent.toString().trim().equalsIgnoreCase("GRESKA"));
+		assertTrue("Za pokusaj unosa kad je niz vec pun NE ispisuje se rec GRESKA na ekranu", outContent.toString().toLowerCase().contains("GRESKA".toLowerCase()));
 		assertEquals("Ipak je povecan brojac iako nije trebalo jer je niz pun", 5, instance.brojac);
 		assertNotEquals("Ipak je uneta tezina iako je niz pun", 199, instance.nizVisina[4]);
 	}
