@@ -1,7 +1,7 @@
 # Laboratorijske vežbe – dvočas br. 4
 
 ## Zadatak 1
-(radi ga laborant u saradnji sa studentima)
+*(radi laborant u saradnji sa studentima)*
 
 
 Napraviti klasu **TezineClanovaEkipe** u paketu **zadatak1** koja ima:
@@ -24,11 +24,11 @@ Napraviti klasu **TezineClanovaEkipe** u paketu **zadatak1** koja ima:
 
 8. Metodu **ispisiKategorije** koja ispisuje na ekranu koliko boksera iz ekipe pripada lakoj, koliko srednjoj i koliko teškoj kategoriji. Ako je težina boksera manja od 65kg on pripada lakoj kategoriji. Ako je težina 65kg ili više, ali manja od 85kg on pripada srednjoj kategoriji. Ako je težina 85kg ili više, on pripada teškoj kategoriji. Ispis bi trebalo da bude u tri reda u formatu: "Laka:4", "Srednja:1", "Teska:9"
 
-Napraviti klasu **TestTezineClanovaEkipe** u paketu **zadatak1** koja u main metodi kreira dva objekta klase TezineClanovaEkipe. Inicijalizovati prvu ekipu tako da ima maksimalno 3 boksera i uneti težine 100.0, 55.5 i 44.5kg. Inicijalizovati drugu ekipu tako da se ne zna koliko maksimalno ima boksera (a nije više od 20) i uneti težine 66.6, 44.3 i 150.0 kg. Ispisati na ekranu težinu najlakšeg boksera druge ekipe.
+Napraviti klasu **ProbaTezineClanovaEkipe** u paketu **zadatak1** koja u main metodi kreira dva objekta klase TezineClanovaEkipe. Inicijalizovati prvu ekipu tako da ima maksimalno 3 boksera i uneti težine 100.0, 55.5 i 44.5kg. Inicijalizovati drugu ekipu tako da se ne zna koliko maksimalno ima boksera (a nije više od 20) i uneti težine 66.6, 44.3 i 150.0 kg. Ispisati na ekranu težinu najlakšeg boksera druge ekipe.
 
 
 ## Zadatak 2
-(rade ga studenti sami)
+*(studenti rade sami)*
 
 Napraviti klasu **VisineClanovaEkipe** u paketu **zadatak2** koja ima:
 
@@ -44,4 +44,4 @@ Napraviti klasu **VisineClanovaEkipe** u paketu **zadatak2** koja ima:
 
 6. Metodu **vratiNajvecuRazliku** koja kao povratnu vrednost vraća razliku u visini između najvišeg i najnižeg košarkaša iz niza.
 
-Napraviti klasu **TestVisineClanovaEkipe** u paketu **zadatak2** koja u main metodi kreira tri objekta klase VisineClanovaEkipe sa kapacitetom od 20, 30 i 40 članova. Uneti u drugu ekipu visine 186, 169 i 224cm i ispisati na ekranu prosečnu visinu košarkaša druge ekipe.
+Napraviti klasu **ProbaVisineClanovaEkipe** u paketu **zadatak2** koja u main metodi kreira tri objekta klase VisineClanovaEkipe sa kapacitetom od 20, 30 i 40 članova. Uneti u drugu ekipu visine 186, 169 i 224cm i ispisati na ekranu prosečnu visinu košarkaša druge ekipe.
